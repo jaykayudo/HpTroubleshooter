@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="header flex-end">
+        <a href="{{url_for('add_knowledge')}}" class="site-button">Add to Knowledge Base</a>
+    </div>
+    <div class="page-content">
+        <div class="boot-row">
+            {% for object in solutions %}
+            <div class="col-6">
+                <div class="page-box">
+
+                    <div class="delete-section flex-end"><form action="{{url_for('delete_solution',id=object.id)}}" method="post"><button type="submit" class="small-site-button">Delete</button></form></div>
+                    <h2>{{object.name}}</h2>
+                    <div class="issues-box">
+                        <h4>Issues</h4>
+                        <ul>
+                            {% for issue in object.issues %}
+                            <li>{{issue.title}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="steps-box">
+                        <h4>Steps</h4>
+                        <ul>
+                            {% for step in object.steps %}
+                            <li><strong>Step {{step.order}}:</strong> {{step.step}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

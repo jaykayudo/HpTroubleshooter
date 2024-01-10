@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="form-box">
+        <h2>HP Laptop Troubleshooting System</h2>
+        <form action="" method="post">
+        <label for="issue">Select an issue:</label>
+        <select name="issue" id="issue">
+            {% for issue in issues %}
+            <option value="{{issue[0]}}" {% if selectedissue == issue %}selected{% endif %}   >{{issue[1]}}</option>
+            {% endfor %}
+            <!-- Add more options -->
+        </select>
+        <button type="submit">Troubleshoot</button>
+        </form>
+    </div>
+    
+    
+    {% if solution %}
+    <div class="solution">
+        <h2>Solution:</h2>
+        <p>{{ solution|safe }}</p>
+    </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="form-box">
+        <h2>Add Knowledge Base from File</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" required>
+                <span class="text-white">file format should be .json</span>
+            </div>
+            <div class="flex-center">
+                <input type="submit" value="Upload" class="site-button">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

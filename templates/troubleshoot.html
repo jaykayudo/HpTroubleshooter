@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h2>Solution for {{solution.name}}</h2>
+        <div class="content-box">
+            {% for step in steps %}
+                <div class="solution-box">
+                    {{step.step}}
+                </div>
+                {% if loop.last and not last %}
+                <div class="flex-end">
+                    <a href="{{ url_for('troubleshoot',id=solution.id) }}?step={{step_number + 1}}" class="site-button">Next</a>
+                </div>
+                {% endif %}
+                {% if loop.last and last %}
+                <div class="feedback-box">
+                    <h3>Was this helpful?</h3>
+                    <div class="w-100">
+                        <a href="{{ url_for('index') }}" class="site-button" style="margin-right: 10px;">Yes</a>
+                        <a href="https://support.hp.com/us-en" class="site-button">No</a>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+          
+        </div>
+    </div>
+{% endblock %}

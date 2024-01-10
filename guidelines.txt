@@ -1,0 +1,15 @@
+open command prompt in this project directory
+run the command "pip install flask" to install flask i.e if you dont have flask installed in your system
+run the command "pip install flask_sqlalchemy" to install flask_sqlalchemy i.e if you dont have flask_sqlalchemy installed in your system
+run the command "python wsgi.py" and your app will be running at "http://127.0.0.1:5000"
+
+
+
+The Admin Key value for the create account form is located at settings.py form. saved as expert_creation_key.
+with this key, you can create knowledge base engineers for the expert system
+
+In the dashboard section, you will see all the data of the knowledge base and you can also add to the data.
+You can add with the form or you can add multiple from a .json file.
+The Add from file link is located at the top right area of the add to knowledge base form page.
+Make sure the file is configured similarly with the "knowledgebase.json" file in this project directory.
+

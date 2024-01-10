@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="header flex-end"><a href="{{url_for('add_from_file')}}" class="site-button">Add from File</a></div>
+<div class="large-form-box">
+    <h2>Add to Knowledge Base</h2>
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="">Solution Title</label>
+            <input type="text" name="solution_name" required>
+        </div>
+        <div class="form-group">
+            <label for="">Issues</label>
+            <div id="issue-box">
+                <div id="issue-container">
+                    <div class="boot-row">
+                        <div class="col-10">
+                            <input type="text" name="issues" required>
+                        </div>
+                        <div class="col-2">
+                            <button class="site-button w-100 m-none" id="add-issue" type="button">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Steps</label>
+            <div id="step-box">
+                <div id="step-container">
+                    <input type="hidden" value="1" name="order">
+                    <div class="boot-row">
+                        <div class="col-10">
+                            <input type="text" name="steps" required>
+                        </div>
+                        <div class="col-2">
+                            <button class="site-button w-100 m-none" id="add-step" type="button">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-center">
+            <input type="submit" class="site-button" value="Add to Knowledge Base">
+        </div>
+    </form>
+</div>
+{% endblock %}
+{% block extrascript %}
+<script src="{{ url_for('static', filename='jquery.js') }}"></script>
+<script type="text/javascript">
+var x = 1;
+var max = 50;
+        
+document.getElementById("add-step").onclick =()=>{
+    console.log("Clicked onclick")
+}
+
+$("#add-step").click(function(){
+    console.log("Clicked");
+    var stephtml = `<div id="step-container">
+                                    <div class="boot-row mb-4">
+                                        <input type="hidden" name="order" value="${x+1}" required>
+                                     <div class="col-10 side-form-group">
+                                        <input type="text" name="steps" required>
+                                     </div>
+                                     <div class="col-2 side-form-group flex-center">
+                                         <button class="site-button w-100 m-none" id="remove-step" type="button">
+                                            -
+                                         </button>
+                                     </div>
+                                     </div>
+                                </div>`
+      if(x<max){
+      $("#step-box").append(stephtml);
+      x++;
+  }
+    })
+$("#step-box").on('click','#remove-step',function(){
+  $(this).closest('#step-container').remove()
+      x--;
+  })
+var y = 1;
+var ymax = 50;
+        var issuehtml = `<div id="issue-container">
+                                    <div class="boot-row mb-4">
+                                     <div class="col-10 side-form-group">
+                                        <input type="text" name="issues" required>
+                                     </div>
+                                     <div class="col-2 side-form-group flex-center">
+                                         <button class="site-button w-100 m-none" id="remove-issue" type="button">
+                                            -
+                                         </button>
+                                     </div>
+                                     </div>
+                                </div>`
+
+$("#add-issue").click(function(){
+      if(y<max){
+      $("#issue-box").append(issuehtml);
+      y++;
+  }
+    })
+$("#issue-box").on('click','#remove-issue',function(){
+  $(this).closest('#issue-container').remove()
+      y--;
+  })
+</script>
+{% endblock %}

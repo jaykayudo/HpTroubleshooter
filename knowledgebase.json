@@ -1,0 +1,37 @@
+{
+    "data":[
+        {
+            "name":"Laptop not turning on",
+            "issues":["No Power Indicator"],
+            "solutions":[
+                "Verify Power Source: Ensure that the laptop is connected to a working power source, either through the AC adapter or a charged battery.",
+                "Check Power Indicator: Look for the power indicator light on the laptop.If it is not illuminated, the laptop might not be receiving power.",
+                "Test the AC Adapter: Check the AC adapter for any physical damage or frayed cables.If possible, test the AC adapter with another HP laptop to confirm if it is working.",
+                "Inspect Battery: If using a battery, remove it and reinsert it properly.Test the laptop with just the AC adapter (remove the battery) to check if it powers on.",
+                "Try Another Outlet: Plug the AC adapter into a different power outlet to eliminate the possibility of a faulty outlet."
+            ]
+        },
+        {
+            "name":"Laptop still not turning on",
+            "issues":["No response when pressing power button"],
+            "solutions":[
+               "Perform a Hard Reset: Disconnect the AC adapter and remove the laptop battery.Press and hold the power button for about 15 seconds. Reconnect the battery and AC adapter.",
+               "Test Without Battery: Remove the laptop battery and connect the AC adapter. Attempt to turn on the laptop without the battery.",
+               "Reseat RAM and Hard Drive: Turn off the laptop and disconnect the AC adapter.Carefully open the laptop access panel to access the RAM and hard drive. Gently remove and reseat the RAM modules and hard drive to ensure they are properly connected",
+               "Check for LED Lights: When you press the power button, observe if any LED lights or indicators blink briefly. If they do, it indicates that power is reaching the laptop.",
+               "Hardware Diagnostic Test (if available): Some HP laptops come with built-in hardware diagnostic tests. Follow the manufacturer's instructions to run these tests and identify potential hardware issues."
+            ]
+        },
+        {
+            "name":"Overheating",
+            "issues":["Laptop getting excessively hot"],
+            "solutions":[
+                "Check Ventilation: Ensure that the laptop is placed on a flat, hard surface to allow proper airflow. Check that the ventilation grilles and fan vents are not obstructed by dust or debris.",
+                "Clean the Vents and Fans: Turn off the laptop and unplug it. Use compressed air to gently blow out dust and debris from the vents and fan openings. Be careful not to damage the fan blades or push debris further into the laptop.",
+                "Adjust Power Settings: Navigate to the Control Panel or Settings and access the Power Options. Choose a power plan that balances performance with energy efficiency. You can also manually adjust the settings to reduce the laptop's processing power when on battery to prevent overheating.",
+                "Update Drivers and BIOS: Visit the official HP website and download the latest drivers and BIOS updates for your laptop model. Install the updates to ensure optimal performance and temperature management.",
+                "Use a Cooling Pad: Consider using a laptop cooling pad with built-in fans to improve airflow and dissipate heat."
+            ]
+        }
+    ]
+}
